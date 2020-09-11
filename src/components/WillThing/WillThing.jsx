@@ -4,7 +4,7 @@ const WillThing = (props) => {
     return (
     <>
     <div class="card" style={{width: "18rem"}}>
-        <img src={props.thing.image} class="card-img-top" alt="benimage" />
+        <img src={props.thing.image} class="card-img-top" alt="willimage" />
         <div class="card-body">
           <h5 class="card-title">{props.thing.name}</h5>
           {props.thing.attributes.map((attribute) =>
@@ -16,3 +16,5 @@ const WillThing = (props) => {
     </>
    );
 }
+
+export default WillThing
