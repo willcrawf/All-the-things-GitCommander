@@ -70,7 +70,7 @@ class App extends Component {
         image: "https://i.imgur.com/gRxOxsA.jpg", 
         attributes: ["makes you live a long time", "consistent poops", "probably tacos sometimes!", "farm to market"], 
       },
-    ] 
+    ]
   } 
   render() {
     console.log(this.state)
