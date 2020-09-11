@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ChloeThing from '../../components/BenThing/ChloeThing'
+import React from 'react';
+import ChloeThing from '../../components/ChloeThings/ChloeThing'
 
 const ChloeThings = (props) => {
     return ( 
