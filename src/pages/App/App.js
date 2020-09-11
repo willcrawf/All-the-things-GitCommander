@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css';
+import BenThings from '../BenThings/BenThings'
+import ChloeThings from '../ChloeThings/ChloeThings';
 
 class App extends Component {
   state = { 
@@ -70,10 +72,30 @@ class App extends Component {
         image: "https://i.imgur.com/gRxOxsA.jpg", 
         attributes: ["makes you live a long time", "consistent poops", "probably tacos sometimes!", "farm to market"], 
       },
+    ],
+    chloesThings: [
+      { name: 'plum',
+        image: 'https://images.unsplash.com/photo-1564750497011-ead0ce4b9448?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1533&q=80',
+        attributes: ['tart', 'juicy', 'fun to bite into', 'sprays purple!', 'much better than banana']
+      },
+      {
+        name: 'chocolate',
+        image: 'https://images.unsplash.com/photo-1587271644393-eb2ae4d6bd44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60',
+        attributes: ['creamy', 'decadent', 'aphrodesiac', 'antioxidant and makes you superhuman', 'restorative powers after patronus']
+      },
+      {
+        name: 'chocolate brownies',
+        image: 'https://images.unsplash.com/photo-1589385973461-eaa9b0ae2830?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60',
+        attributes: ['coats and fills your mouth with chocolatey goodness', 'adds energy and tolerance', 'super yummy', 'great breakfast choice']
+      },
+      {
+        name: 'chocolate melt pb cups',
+        image: 'https://images.unsplash.com/photo-1553790271-e480df1b886b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=60',
+        attributes: ['transcendence', 'gives you inspiration for projects', 'happiness']
+      }
     ]
   } 
   render() {
-    console.log(this.state)
     return (
       <>
         <Route 
@@ -83,11 +105,23 @@ class App extends Component {
               {/* All the <a> tags should live here */}
               <h2>All-The-Things</h2>
               <a href="/themanliestthings">Ben's Things</a> 
+              <a href="/chloesthings">Chloe's Things</a>
             </>
           }
         />
         {/* All the <Route> components should live here */}
-
+        <Route 
+          exact path='/themanliestthings'
+          render={() => 
+            <BenThings 
+              bensThings={this.state.bensThings}
+            />
+        }/>
+        <Route
+          exact path="/chloesthings"
+          render={() => <ChloeThings 
+            chloesThings={this.state.chloesThings}
+          />} />
       </>
       
     );
@@ -95,4 +129,3 @@ class App extends Component {
 }
  
 export default App;
-
