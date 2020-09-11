@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css';
+import BensThings from '../BensThings/BensThings'
 
 class App extends Component {
   state = { 
@@ -73,7 +74,6 @@ class App extends Component {
     ] 
   } 
   render() {
-    console.log(this.state)
     return (
       <>
         <Route 
@@ -87,7 +87,13 @@ class App extends Component {
           }
         />
         {/* All the <Route> components should live here */}
-
+        <Route 
+          exact path='/themanliestthings'
+          render={() => 
+            <BensThings 
+              bensThings={this.state.bensThings}
+            />
+        }/>
       </>
       
     );
@@ -95,4 +101,3 @@ class App extends Component {
 }
  
 export default App;
-
